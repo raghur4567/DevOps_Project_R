@@ -1,0 +1,11 @@
+image:
+  repository: devops-challenge-api
+  tag: latest
+  pullPolicy: IfNotPresent
+
+replicaCount: 1
+
+service:
+  type: ClusterIP
+  port: 80
+
