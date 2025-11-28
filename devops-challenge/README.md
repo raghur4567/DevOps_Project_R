@@ -35,13 +35,13 @@ setup.sh            -> Automates build + infra + deploy
 system-checks.sh    -> Validates deployment
 
 ## Summary
+
 This project shows:
 - Docker containerization
 - Terraform for infrastructure automation
 - Kubernetes deployment using Helm
 - Security best practice (non-root container)
 - Automation using Bash scripts
-
 
 ## Port 80 vs Non-Root Challenge – Solution
 
@@ -51,3 +51,4 @@ This project shows:
 - While running the container, we mapped host port 80 → container port 8080 using: docker run -p 80:8080.
 - This allows users to access the application through port 80 externally while the container runs safely as a non-root user internally.
 - This approach maintains both security and functionality without requiring root privileges.
+- We also updated the Dockerfile with proper USER, EXPOSE 8080, and CMD/ENTRYPOINT instructions so the application automatically runs as the  non-root user on port 8080 without manual switching.
