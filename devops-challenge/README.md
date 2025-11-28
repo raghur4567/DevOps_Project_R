@@ -44,3 +44,11 @@ This project shows:
 
 This is a small end-to-end DevOps project, easy to explain in interviews.
 
+## Port 80 vs Non-Root Challenge – Solution
+
+- Running an application directly on port 80 requires root access, which introduces security risks.
+- To avoid running the container as root, we created a non-root user inside the Docker image.
+- Instead of binding the app to port 80, we configured it to run on port 8080 inside the container.
+- While running the container, we mapped host port 80 → container port 8080 using: docker run -p 80:8080.
+- This allows users to access the application through port 80 externally while the container runs safely as a non-root user internally.
+- This approach maintains both security and functionality without requiring root privileges.
