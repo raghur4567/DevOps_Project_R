@@ -42,7 +42,6 @@ This project shows:
 - Security best practice (non-root container)
 - Automation using Bash scripts
 
-This is a small end-to-end DevOps project, easy to explain in interviews.
 
 ## Port 80 vs Non-Root Challenge – Solution
 
