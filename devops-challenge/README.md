@@ -46,4 +46,17 @@ Final Result
 - Kubernetes deployment using Helm
 - Terraform for Infrastructure as Code
 - Full deployment automation in one command
+  
+----------------------------------------
+## CI/CD Pipeline (GitHub Actions)
+----------------------------------------
+This project uses GitHub Actions to automatically run a CI workflow on every push to the `main` branch.
+
+---------------------------------------
+### Pipeline Screenshot
+---------------------------------------
+![CI Pipeline Success](./<img width="1351" height="713" alt="ci pipeline screen shot" src="https://github.com/user-attachments/assets/a1a51143-b0ce-4311-8c8b-cf7094540567" />
+)
+
+
 
