@@ -1,9 +1,7 @@
- name: GitHub Actions CI workflow
+name: CI
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
     branches: [ "main" ]
 
 jobs:
