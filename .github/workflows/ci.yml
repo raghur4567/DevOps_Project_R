@@ -1,5 +1,3 @@
- name: CI Pipeline
-
 on:
   push:
     branches: [ "main" ]
@@ -16,6 +14,6 @@ jobs:
         run: |
           echo "Listing project files"
           ls -R
-
+          
       - name: Success message
         run: echo "CI Pipeline completed successfully!"
