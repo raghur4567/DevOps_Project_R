@@ -16,7 +16,11 @@ jobs:
 
       - name: Show repository structure
         run: |
-          echo "Current directory:"
-          pwd
-          echo "Files in repo:"
+          echo "Listing all files"
           ls -R
+
+      - name: Validate Terraform
+        working-directory: devops-challenge/terraform
+        run: |
+          terraform init -backend=false
+          terraform validate
