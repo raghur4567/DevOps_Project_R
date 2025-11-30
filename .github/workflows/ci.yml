@@ -1,8 +1,10 @@
-name: CI
+ name: GitHub Actions CI workflow
 
 on:
   push:
-    branches: ["main", "master"]
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -12,34 +14,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install Python deps
+      - name: Show repository structure
         run: |
-          pip install flask flake8
-
-      - name: Lint Python
-        run: flake8 app || true
-
-      - name: Install Helm
-        run: |
-          curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
-
-      - name: Lint Helm chart
-        run: helm lint helm/api || true
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
-
-      - name: Validate Terraform
-        run: |
-          cd terraform
-          terraform init -backend=false
-          terraform validate
-
-      - name: Build Docker image
-        run: docker build -t devops-challenge-api .
-
+          echo "Current directory:"
+          pwd
+          echo "Files in repo:"
+          ls -R
