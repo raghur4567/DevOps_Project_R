@@ -17,8 +17,8 @@ Port 80 Security Solution
 ----------------------------------------
 - Running an app directly on port 80 requires root access (security risk)
 - Created a non-root user inside Docker image
-- App runs on port 8080 inside the container
-- Host port mapped to container port during run: docker run -p 80:8080
+- App runs on port 5000 inside the container
+- Host port mapped to container port during run: docker run -p 80:5000
 - This keeps the container secure and still allows access through port 80
 
 ----------------------------------------
@@ -57,6 +57,7 @@ This project uses GitHub Actions to automatically run a CI workflow on every pus
 ---------------------------------------
 ![CI Pipeline Success](./<img width="1351" height="713" alt="ci pipeline screen shot" src="https://github.com/user-attachments/assets/a1a51143-b0ce-4311-8c8b-cf7094540567" />
 )
+
 
 
 
