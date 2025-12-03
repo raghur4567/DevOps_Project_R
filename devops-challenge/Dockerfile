@@ -1,11 +1,18 @@
 FROM python:3.11-slim
+
+
 WORKDIR /app
-# Install dependencies
-RUN pip install flask
-# Copy application source
-COPY app/ /app/
-# Create non-root user
-RUN useradd -m appuser
+
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+RUN useradd -m appuser && chown -R appuser:appuser /app
+
 USER appuser
-EXPOSE 80
-CMD ["python", "main.py"]
+
+EXPOSE 5000
+
+CMD ["python", "app.py"]
